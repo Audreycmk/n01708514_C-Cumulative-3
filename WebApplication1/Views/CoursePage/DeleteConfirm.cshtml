@@ -1,0 +1,27 @@
+<style>
+    body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background-color: #e6d8f2;
+        color: white;
+    }
+    div {
+        padding: 20px 5px;
+        background-color: #d1b3e7;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px #c3a1db;
+    }
+</style>
+@model Cumulative1.Models.Course
+
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/CoursePage/Show/@Model.CourseId">Cancel</a>
+    </nav>
+    <h2>Are you sure you want to delete @Model.CourseCode @Model.CourseName?</h2>
+    <p>This action cannot be undone.</p>
+    <form method="POST" action="/CoursePage/Delete/@Model.CourseId">
+        <button style="background-color: #c3a1db">
+            Confirm Delete
+        </button>
+    </form>
+</div>

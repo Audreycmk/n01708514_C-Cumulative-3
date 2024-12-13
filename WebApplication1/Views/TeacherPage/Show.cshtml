@@ -1,0 +1,40 @@
+<style>
+    body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background-color: #e6d8f2;
+        color: white;
+    }
+    h1 {
+        color: white;
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+        text-shadow: 2px 2px #d1b3e7;
+    }
+    div {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        background-color: #d1b3e7;
+        border-radius: 10px;
+        width: 60%;
+        margin: 0 auto;
+        box-shadow: 2px 2px 5px #c3a1db;
+    }
+    p {
+        font-size: 1.2em;
+        margin: 5px 0;
+    }
+</style>
+
+@model Cumulative1.Models.Teacher
+
+<h1>@Model.TeacherFName @Model.TeacherLName</h1>
+
+<div>
+    <p>Employee Number: @Model.EmployeeNumber</p>
+    <p>Hiring Date: @Model.hiredate</p>
+    <p>Salary: $@Model.salary</p>
+    <a  href="/TeacherPage/DeleteConfirm/@Model.TeacherId">Delete Information</a>
+    <a href="/TeacherPage/Edit/@Model.TeacherId">Edit</a>
+</div>

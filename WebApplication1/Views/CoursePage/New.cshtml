@@ -1,0 +1,56 @@
+<style>
+    body {
+        font-family: 'Comic Sans MS', cursive, sans-serif;
+        background-color: #e6d8f2;
+        color: white;
+    }
+    div {
+        padding: 20px 5px;
+        background-color: #d1b3e7;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px #c3a1db;
+    }
+</style>
+
+@model Cumulative1.Models.Course
+
+<h1>@Model.CourseCode - @Model.CourseName</h1>
+
+<div style="display:flex; flex-direction:column">
+    <p1>Start Date: @Model.StartDate</p1>
+    <p1>Finish Date: @Model.FinishDate</p1>
+    <a href="/CoursePage/DeleteConfirm/@Model.CourseId">Delete Information</a>
+</div>
+<div id="containershow">
+    <nav>
+        <a class="navlink" href="/CoursePage/List">Back To Student List</a>
+    </nav>
+    <h2>New Course</h2>
+    <form method="POST" action="/CoursePage/Create">
+        <div class="inputrow">
+            <label for=" CourseCode">Course Code:</label>
+            <input type="text" style="position:absolute; left:20%" id="CourseCode" name="CourseCode" />
+
+        </div>
+        <div class="inputrow">
+            <label for="TeacherId">Teacher Id:</label>
+            <input type="text" style="position:absolute; left:20%" id="StudentLname" name="StudentLname" />
+
+        </div>
+        <div class="inputrow">
+            <label for="StartDate">Start Date:</label>
+            <input type="text" style="position:absolute; left:20%" id="StartDate" name="StartDate" />
+        </div>
+        <div class="inputrow">
+            <label for="FinishDate">Finish Date:</label>
+            <input type="text" style="position:absolute; left:20%" id="FinishDate" name="FinishDate" />
+        </div>
+        <div class="inputrow">
+            <label for="CourseName">Course Name:</label>
+            <input type="text" style="position:absolute; left:20%" id="CourseName" name="CourseName" />
+        </div>
+        <div class="inputrow">
+            <input type="submit" value="Add new Course" />
+        </div>
+    </form>
+</div>
